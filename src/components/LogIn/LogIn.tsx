@@ -9,6 +9,7 @@ const LogIn: React.FC = () => {
 	const passwordRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
+	const dispatch = useAppDispatch()
 	async function handleSubmit(e: { preventDefault: () => void; }) {
 		e.preventDefault();
 		try {
@@ -20,7 +21,6 @@ const LogIn: React.FC = () => {
 		}
 		setLoading(false)
 	}
-	const dispatch = useAppDispatch()
 	return (
 		<section className="login">
 			<Card className="shadow mt-2 mb-4" style={{padding: "0px 15px"}}>

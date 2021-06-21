@@ -10,6 +10,7 @@ const SignUp: React.FC = () => {
 	const passwordConfirmRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
+	const dispatch = useAppDispatch()
 	async function handleSubmit(e: { preventDefault: () => void; }) {
 		e.preventDefault();
 		if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -23,8 +24,8 @@ const SignUp: React.FC = () => {
 			setError('Failed to create an accoutn')
 		}
 		setLoading(false)
+		dispatch(authLogInMode())
 	}
-	const dispatch = useAppDispatch()
 	return (
 		<section className="sign-up">
 			<Card className="shadow mt-2 mb-4" style={{padding: "0px 15px"}}>
