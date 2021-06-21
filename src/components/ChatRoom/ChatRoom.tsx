@@ -1,10 +1,13 @@
 import React from "react";
+import {auth} from "../../firebase";
 
 const ChatRoom: React.FC = () => {
 	return (
-			<>
-				Hello
-			</>
+			<section className="chat-room">
+				<button onClick={()=>{
+					auth.signOut()
+				}}> Log Out </button>
+			</section>
 	);
 }
 

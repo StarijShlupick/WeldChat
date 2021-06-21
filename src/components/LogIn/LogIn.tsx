@@ -1,13 +1,33 @@
-import React, {useRef} from "react";
-import { Form, Button } from 'react-bootstrap'
-import {Link} from "react-router-dom";
+import React, {useRef, useState} from "react";
+import {Form, Button, Alert, Card} from 'react-bootstrap'
+import {login} from "../../firebase";
+import {authSignUpMode} from "../../features/actions";
+import {useAppDispatch} from "../../app/hooks";
 
 const LogIn: React.FC = () => {
 	const emailRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	const passwordRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState('');
+	async function handleSubmit(e: { preventDefault: () => void; }) {
+		e.preventDefault();
+		try {
+			setError('')
+			setLoading(true)
+			await login(emailRef.current.value, passwordRef.current.value)
+		} catch {
+			setError('Failed to log in')
+		}
+		setLoading(false)
+	}
+	const dispatch = useAppDispatch()
 	return (
-		<>
-				<Form>
+		<section className="login">
+			<Card className="shadow mt-2 mb-4" style={{padding: "0px 15px"}}>
+				<Card.Body>
+					<h2 className="text-center mb-4">Log In</h2>
+				</Card.Body>
+				<Form onSubmit={handleSubmit}>
 					<Form.Group id="email">
 						<Form.Label>
 							Email
@@ -20,12 +40,15 @@ const LogIn: React.FC = () => {
 						</Form.Label>
 						<Form.Control type="password" ref={passwordRef} required/>
 					</Form.Group>
-					<Button className="w-100 mb-4" type="submit">Log In</Button>
+					{error && <Alert variant="danger">{error}</Alert>}
+					<Button className="w-100 mb-4" type="submit" disabled={loading}>Log In</Button>
 				</Form>
-			<div className="w-100 mt2 mb-4">
-				Need an account? <Link to="/signup">Sign Up</Link>
-			</div>
-		</>
+				<div className="w-100 mt2 mb-4">
+					Need an account? <Button variant="link" onClick={() => {
+					dispatch(authSignUpMode())}}>Sign Up</Button>
+				</div>
+			</Card>
+		</section>
 	);
 }
 

@@ -7,9 +7,9 @@ import Auth from "./components/Auth/Auth";
 const App: React.FC = () => {
   const [user] = useAuthState(auth)
   return (
-    <div className="App">
+    <section className="App">
       {user ? <ChatRoom /> : <Auth />}
-    </div>
+    </section>
   );
 }
 

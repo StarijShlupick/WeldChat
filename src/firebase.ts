@@ -13,4 +13,10 @@ const app = firebase.initializeApp ({
 
 export const auth = app.auth()
 export const firestore = app.firestore()
+export const signup = (email: string, password: string) => {
+	return auth.createUserWithEmailAndPassword(email, password)
+}
+export const login = (email: string, password: string) => {
+	return auth.signInWithEmailAndPassword(email, password)
+}
 export default app

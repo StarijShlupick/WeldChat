@@ -20,24 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97d87d43-7340-4710-902f-4bf086aa06b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Auth/Auth.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ChatRoom/ChatRoom.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LogIn/LogIn.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/reducers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/Counter.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/Counter.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/counterAPI.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/counterSlice.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/counter/counterSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatRoom/ChatRoom.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatRoom/ChatRoom.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LogIn/LogIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogIn/LogIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/firebase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +81,8 @@
       <workItem from="1624011725512" duration="2032000" />
       <workItem from="1624124390647" duration="4163000" />
       <workItem from="1624213061367" duration="620000" />
-      <workItem from="1624266783762" duration="8027000" />
+      <workItem from="1624266783762" duration="14850000" />
+      <workItem from="1624302355215" duration="3940000" />
     </task>
     <servers />
   </component>
