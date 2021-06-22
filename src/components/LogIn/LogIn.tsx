@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Form, Button, Alert, Card} from 'react-bootstrap'
 import {login} from "../../firebase";
 import {authSignUpMode} from "../../features/actions";
@@ -7,19 +7,27 @@ import {useAppDispatch} from "../../app/hooks";
 const LogIn: React.FC = () => {
 	const emailRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	const passwordRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+	const componentIsMounted = useRef(true);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
 	const dispatch = useAppDispatch()
+	useEffect(() => {
+		return () => {
+			componentIsMounted.current = false;
+		}
+	}, [])
 	async function handleSubmit(e: { preventDefault: () => void; }) {
 		e.preventDefault();
 		try {
-			setError('')
-			setLoading(true)
+				setError('')
+				setLoading(true)
 			await login(emailRef.current.value, passwordRef.current.value)
 		} catch {
 			setError('Failed to log in')
 		}
-		setLoading(false)
+		if (componentIsMounted.current) {
+			setLoading(false)
+		}
 	}
 	return (
 		<section className="login">

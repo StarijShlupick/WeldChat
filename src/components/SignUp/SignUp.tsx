@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Form, Button, Alert, Card} from 'react-bootstrap'
 import {signup} from "../../firebase";
 import {useAppDispatch} from "../../app/hooks";
@@ -8,9 +8,15 @@ const SignUp: React.FC = () => {
 	const emailRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	const passwordRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	const passwordConfirmRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+	const componentIsMounted = useRef(true);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
 	const dispatch = useAppDispatch()
+	useEffect(() => {
+		return () => {
+			componentIsMounted.current = false;
+		}
+	}, [])
 	async function handleSubmit(e: { preventDefault: () => void; }) {
 		e.preventDefault();
 		if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -23,7 +29,9 @@ const SignUp: React.FC = () => {
 		} catch {
 			setError('Failed to create an accoutn')
 		}
-		setLoading(false)
+		if (componentIsMounted.current) {
+			setLoading(false)
+		}
 		dispatch(authLogInMode())
 	}
 	return (
