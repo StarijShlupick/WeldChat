@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97d87d43-7340-4710-902f-4bf086aa06b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/send_white_24dp.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ChatRoom/ChatRoom.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatRoom/ChatRoom.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,13 +52,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/LogIn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/icons" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\Shnuck\Desktop\WeldChat\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Shnuck\Desktop\WeldChat\src\assets\icons" />
       <recent name="C:\Users\Shnuck\Desktop\WeldChat\src\components\LogIn" />
     </key>
   </component>
@@ -76,6 +77,9 @@
       <workItem from="1624266783762" duration="14850000" />
       <workItem from="1624302355215" duration="4836000" />
       <workItem from="1624345204683" duration="10615000" />
+      <workItem from="1624389809644" duration="42000" />
+      <workItem from="1624448598113" duration="2404000" />
+      <workItem from="1624524803843" duration="1393000" />
     </task>
     <servers />
   </component>
