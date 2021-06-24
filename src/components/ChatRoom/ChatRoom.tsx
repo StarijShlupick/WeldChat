@@ -2,7 +2,6 @@ import React, {useRef, useState} from "react";
 import {auth, firestore} from "../../firebase";
 import {Button, Container, Form, Navbar, Image} from "react-bootstrap";
 import sendIcon from '../../assets/icons/send_white_24dp.svg'
-import { Scrollbars } from "react-custom-scrollbars-2";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import firebase from "firebase";
 import Message from "../Message/Message";
@@ -35,12 +34,12 @@ const ChatRoom: React.FC = () => {
 						}}> Log Out </Button>
 					</Container>
 				</Navbar>
-				<Scrollbars>
-					<Container className="d-flex flex-column" style={{ height: '100%', width:'100%'}}>
+				<section className="messages-container" style={{overflowY: 'auto'}}>
+					<Container className="d-flex flex-column" style={{ height: '100%', width:'100%' }}>
 						{messages && messages.map(msg => <Message key={msg.id} message={msg} />)}
 						<span ref={scrollToRef}/>
 					</Container>
-				</Scrollbars>
+				</section>
 				<Navbar bg="light">
 					<Container className="h-100">
 						<Form className="d-flex justify-content-between align-items-center w-100" onSubmit={handleSubmit}>
