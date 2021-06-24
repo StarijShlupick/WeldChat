@@ -2,6 +2,7 @@ import React from "react";
 import {auth} from "../../firebase";
 import {Button, Container, Form, Navbar, Image} from "react-bootstrap";
 import sendIcon from '../../assets/icons/send_white_24dp.svg'
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 const ChatRoom: React.FC = () => {
 	return (
@@ -14,35 +15,37 @@ const ChatRoom: React.FC = () => {
 						}}> Log Out </Button>
 					</Container>
 				</Navbar>
-						<Container className="d-flex flex-column" style={{ height: '100%', width:'100%', overflowY: 'auto' }}>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
-								aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
-								quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
-						</Container>
+				<Scrollbars>
+					<Container className="d-flex flex-column" style={{ height: '100%', width:'100%'}}>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto,
+									aut cupiditate deserunt ducimus eaque, excepturi facilis nesciunt non officiis
+									quo quos ratione tempore, vel veniam? A aut corporis ratione.</p>
+					</Container>
+				</Scrollbars>
 				<Navbar bg="light">
 					<Container className="h-100">
 						<Form className="d-flex justify-content-between align-items-center w-100">
