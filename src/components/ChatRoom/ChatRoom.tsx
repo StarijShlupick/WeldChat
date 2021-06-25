@@ -1,6 +1,6 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {auth, firestore} from "../../firebase";
-import {Button, Container, Form, Navbar, Image} from "react-bootstrap";
+import {Button, Container, Form, Navbar, Image, Spinner} from "react-bootstrap";
 import sendIcon from '../../assets/icons/send_white_24dp.svg'
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import firebase from "firebase";
@@ -9,9 +9,12 @@ import Message from "../Message/Message";
 const ChatRoom: React.FC = () => {
 	const scrollToRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 	const messagesRef = firestore.collection('messages');
-	const query = messagesRef.orderBy('createdAt').limit(25);
-	const [messages] = useCollectionData(query, { idField: 'id' });
+	const query = messagesRef.orderBy('createdAt').limitToLast(30);
+	const [messages, loading] = useCollectionData(query, { idField: 'id' });
 	const [formValue, setFormValue] = useState('');
+	const scrollToNewMessages = () => {
+		scrollToRef.current.scrollIntoView({ behavior: 'smooth' });
+	}
 	async function handleSubmit(e: { preventDefault: () => void; }) {
 		e.preventDefault();
 		// @ts-ignore
@@ -24,6 +27,9 @@ const ChatRoom: React.FC = () => {
 		setFormValue('');
 		scrollToRef.current.scrollIntoView({ behavior: 'smooth' });
 	}
+	useEffect(() => {
+		scrollToNewMessages()
+	})
 	return (
 			<section className="chat-room d-flex flex-column justify-content-between h-100">
 				<Navbar bg="light">
@@ -36,6 +42,14 @@ const ChatRoom: React.FC = () => {
 				</Navbar>
 				<section className="messages-container" style={{overflowY: 'auto'}}>
 					<Container className="d-flex flex-column" style={{ height: '100%', width:'100%' }}>
+						{
+							loading ? (
+									<Spinner className="align-self-center" animation="border"/>
+							) :
+									(
+											''
+									)
+						}
 						{messages && messages.map(msg => <Message key={msg.id} message={msg} />)}
 						<span ref={scrollToRef}/>
 					</Container>
