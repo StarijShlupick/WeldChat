@@ -6,6 +6,8 @@ import {useCollectionData} from "react-firebase-hooks/firestore";
 import firebase from "firebase";
 import Message from "../Message/Message";
 import {useAuthState} from "react-firebase-hooks/auth";
+import {useAppSelector} from "../../app/hooks";
+import ThemeModeToggler from "../ThemeModeToggler/ThemeModeToggler";
 
 const ChatRoom: React.FC = () => {
 	const scrollToRef = useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -14,6 +16,7 @@ const ChatRoom: React.FC = () => {
 	const [messages, loading] = useCollectionData(query, { idField: 'id' });
 	const [formValue, setFormValue] = useState('');
 	const [user] = useAuthState(auth);
+	const themeMode = useAppSelector((state) => state.ThemeModeReducer)
 	const scrollToNewMessages = () => {
 		scrollToRef.current.scrollIntoView({ behavior: 'smooth' });
 	}
@@ -33,12 +36,17 @@ const ChatRoom: React.FC = () => {
 	})
 	return (
 			<section className="chat-room d-flex flex-column justify-content-between h-100">
-				<Navbar bg="light">
+				<Navbar bg={themeMode}>
 					<Container>
 						<Navbar.Brand>WeldChat</Navbar.Brand>
-						<Button variant="outline-primary" size="sm" onClick={()=>{
-							auth.signOut()
-						}}> Log Out </Button>
+						<div className="wrapper d-flex align-items-center">
+							<div className="wrapper mr-3">
+								<ThemeModeToggler/>
+							</div>
+							<Button variant="outline-primary" size="sm" onClick={()=>{
+								auth.signOut()
+							}}> Log Out </Button>
+						</div>
 					</Container>
 				</Navbar>
 				<section className="messages-container" style={{overflowY: 'auto'}}>
