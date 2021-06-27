@@ -5,6 +5,7 @@ import sendIcon from '../../assets/icons/send_white_24dp.svg'
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import firebase from "firebase";
 import Message from "../Message/Message";
+import {useAuthState} from "react-firebase-hooks/auth";
 
 const ChatRoom: React.FC = () => {
 	const scrollToRef = useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -12,13 +13,13 @@ const ChatRoom: React.FC = () => {
 	const query = messagesRef.orderBy('createdAt').limitToLast(30);
 	const [messages, loading] = useCollectionData(query, { idField: 'id' });
 	const [formValue, setFormValue] = useState('');
+	const [user] = useAuthState(auth);
 	const scrollToNewMessages = () => {
 		scrollToRef.current.scrollIntoView({ behavior: 'smooth' });
 	}
 	async function handleSubmit(e: { preventDefault: () => void; }) {
 		e.preventDefault();
-		// @ts-ignore
-		const { uid } = auth.currentUser;
+		const uid = user?.uid;
 		await messagesRef.add({
 			text: formValue,
 			createdAt: firebase.firestore.FieldValue.serverTimestamp(),
