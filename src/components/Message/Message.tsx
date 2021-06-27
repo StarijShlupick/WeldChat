@@ -19,8 +19,8 @@ const Message: FunctionComponent<TMessageProps> = (props: TMessageProps) => {
 	const time = `${monthNames[month]} ${day},
 			${hours >= 10 ? hours : `0${hours}`}:${minutes >= 10 ? minutes : `0${minutes}`}`;
 
-	// @ts-ignore
-	const messageUser = uid === auth.currentUser.uid ? 'sent' : 'received';
+	const messageUser = uid === (auth.currentUser && auth.currentUser.uid) ? 'sent' : 'received';
+	const name = user?.email
 	return (
 			<section className={`message pt-2 pb-1 ${messageUser === 'sent' ? 'align-self-end' : 'align-self-start'}`}
 										 style={messageUser === 'sent' ? {textAlign: 'end', maxWidth: '75%'} : {textAlign: 'start', maxWidth: '75%'}}>
@@ -28,7 +28,7 @@ const Message: FunctionComponent<TMessageProps> = (props: TMessageProps) => {
 													border={`${messageUser === 'sent' ? 'primary' : 'light'}`}>
 					<Card.Header className="p-2 pt-1 pb-1">
 						<Card.Title className="mb-0">
-							{messageUser === 'sent' ? 'You' : user?.email}
+							{messageUser === 'sent' ? 'You' : name && name.split('@')[0]}
 							<div className="text-muted font-weight-light mt-1" style={{fontSize: '0.8rem'}}>
 								{time}
 							</div>

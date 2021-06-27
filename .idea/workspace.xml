@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97d87d43-7340-4710-902f-4bf086aa06b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Message/Message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/Message.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +81,7 @@
       <workItem from="1624546652858" duration="12119000" />
       <workItem from="1624610591789" duration="15884000" />
       <workItem from="1624709478497" duration="2477000" />
+      <workItem from="1624807973196" duration="1651000" />
     </task>
     <servers />
   </component>
@@ -107,5 +108,21 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1624269692266" />
+    <state width="1900" height="276" key="GridCell.Tab.0.bottom" timestamp="1624808061982">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1900" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1624808061982" />
+    <state width="1900" height="276" key="GridCell.Tab.0.center" timestamp="1624808061982">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1900" height="276" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1624808061982" />
+    <state width="1900" height="276" key="GridCell.Tab.0.left" timestamp="1624808061982">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1900" height="276" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1624808061982" />
+    <state width="1900" height="276" key="GridCell.Tab.0.right" timestamp="1624808061982">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1900" height="276" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1624808061982" />
   </component>
 </project>
