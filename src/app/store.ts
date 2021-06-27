@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import {AuthReducer} from "../features/reducers";
+import {AuthReducer, ThemeModeReducer} from "../features/reducers";
 
 export const loadState = () => {
   try {
@@ -23,7 +23,8 @@ export const saveState = (state: object) => {
 
 export const store = configureStore({
   reducer: {
-    AuthReducer
+    AuthReducer,
+    ThemeModeReducer
   },
   preloadedState: loadState(),
 });
@@ -31,6 +32,7 @@ export const store = configureStore({
 store.subscribe(() =>
     saveState({
       AuthReducer: store.getState().AuthReducer,
+      ThemeModeReducer: store.getState().ThemeModeReducer,
     })
 )
 

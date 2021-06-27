@@ -10,3 +10,7 @@ export type TMessageProps = {
 	key: number | string,
 	message: object
 }
+export enum EThemeMode {
+	light = 'light',
+	dark = 'dark',
+}
