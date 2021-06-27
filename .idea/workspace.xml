@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97d87d43-7340-4710-902f-4bf086aa06b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Message/Message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/Message.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,7 @@
       <workItem from="1624546652858" duration="12119000" />
       <workItem from="1624610591789" duration="15884000" />
       <workItem from="1624709478497" duration="2477000" />
-      <workItem from="1624807973196" duration="1651000" />
+      <workItem from="1624807973196" duration="2059000" />
     </task>
     <servers />
   </component>
