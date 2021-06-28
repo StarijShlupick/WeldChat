@@ -58,7 +58,8 @@ const ChatRoom: React.FC = () => {
 					<Container className="d-flex flex-column" style={{height: '100%', width: '100%'}}>
 						{
 							loading ? (
-											<Spinner className="align-self-center" animation="border"/>
+											<Spinner className="align-self-center" animation="border"
+															 variant={themeMode === EThemeMode.light ? 'dark' : 'light'}/>
 									) :
 									(
 											''

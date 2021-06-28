@@ -7,7 +7,7 @@ import {useAppSelector} from "../../app/hooks";
 const Message: FunctionComponent<TMessageProps> = (props: TMessageProps) => {
 	// @ts-ignore
 	const {text, uid, createdAt, email} = props.message;
-	const themeMode = useAppSelector((state) => state.ThemeModeReducer)
+	const themeMode = useAppSelector((state) => state.ThemeModeReducer);
 	const monthNames = ["January", "February", "March", "April", "May", "June",
 		"July", "August", "September", "October", "November", "December"
 	];

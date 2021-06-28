@@ -25,8 +25,8 @@ const App: React.FC = () => {
 		return (
 				<section className="app d-flex align-items-center justify-content-center" style={{height: '100vh'}}>
 					<div className="d-flex align-items-center justify-content-center flex-column">
-						<h1 className="mb-5">WeldChat</h1>
-						<Spinner animation="border"/>
+						<h1 className={`mb-5 ${themeMode === EThemeMode.light ? 'text-dark' : 'text-light'}`}>WeldChat</h1>
+						<Spinner animation="border" variant={themeMode === EThemeMode.light ? 'dark' : 'light'}/>
 					</div>
 				</section>
 		)
