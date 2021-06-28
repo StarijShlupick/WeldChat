@@ -1,8 +1,9 @@
 import React, {useEffect, useRef, useState} from "react";
-import {Form, Button, Alert, Card} from 'react-bootstrap'
+import {Alert, Button, Card, Form} from 'react-bootstrap'
 import {login} from "../../firebase";
 import {authSignUpMode} from "../../features/actions";
-import {useAppDispatch} from "../../app/hooks";
+import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {EThemeMode} from "../../features/types";
 
 const LogIn: React.FC = () => {
 	const emailRef = useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -10,17 +11,19 @@ const LogIn: React.FC = () => {
 	const componentIsMounted = useRef(true);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
+	const themeMode = useAppSelector((state) => state.ThemeModeReducer);
 	const dispatch = useAppDispatch()
 	useEffect(() => {
 		return () => {
 			componentIsMounted.current = false;
 		}
 	}, [])
+
 	async function handleSubmit(e: { preventDefault: () => void; }) {
 		e.preventDefault();
 		try {
-				setError('')
-				setLoading(true)
+			setError('')
+			setLoading(true)
 			await login(emailRef.current.value, passwordRef.current.value)
 		} catch {
 			setError('Failed to log in')
@@ -29,34 +32,41 @@ const LogIn: React.FC = () => {
 			setLoading(false)
 		}
 	}
+
 	return (
-		<section className="login">
-			<Card className="shadow mt-2 mb-4" style={{padding: "0px 15px"}}>
-				<Card.Body>
-					<h2 className="text-center mb-4">Log In</h2>
-				</Card.Body>
-				<Form onSubmit={handleSubmit}>
-					<Form.Group id="email">
-						<Form.Label>
-							Email
-						</Form.Label>
-						<Form.Control type="email" ref={emailRef} required/>
-					</Form.Group>
-					<Form.Group id="password">
-						<Form.Label>
-							Password
-						</Form.Label>
-						<Form.Control type="password" ref={passwordRef} required/>
-					</Form.Group>
-					{error && <Alert variant="danger">{error}</Alert>}
-					<Button className="w-100 mb-4" type="submit" disabled={loading}>Log In</Button>
-				</Form>
-				<div className="w-100 mt2 mb-4">
-					Need an account? <Button variant="link" onClick={() => {
-					dispatch(authSignUpMode())}}>Sign Up</Button>
-				</div>
-			</Card>
-		</section>
+			<section className="login">
+				<Card className="shadow mt-2 mb-4" style={{padding: "0px 15px"}}
+							bg={themeMode === EThemeMode.light ? 'light' : 'dark'}
+							text={themeMode === EThemeMode.light ? 'dark' : 'light'}>
+					<Card.Body>
+						<h2 className="text-center mb-4">Log In</h2>
+					</Card.Body>
+					<Form onSubmit={handleSubmit}>
+						<Form.Group id="email">
+							<Form.Label>
+								Email
+							</Form.Label>
+							<Form.Control type="email" ref={emailRef} required/>
+						</Form.Group>
+						<Form.Group id="password">
+							<Form.Label>
+								Password
+							</Form.Label>
+							<Form.Control type="password" ref={passwordRef} required/>
+						</Form.Group>
+						{error && <Alert variant="danger">{error}</Alert>}
+						<Button className="w-100 mb-4" type="submit" disabled={loading}
+										variant={themeMode === EThemeMode.light ? 'primary' : 'outline-light'}>Log In</Button>
+					</Form>
+					<div className="w-100 mt2 mb-4">
+						Need an account? <span className={themeMode === EThemeMode.light ? "text-primary" : 'text-light'}
+																	 onClick={() => {
+																		 dispatch(authSignUpMode())
+																	 }}
+																	 style={{cursor: "pointer"}}><u>Sign Up</u></span>
+					</div>
+				</Card>
+			</section>
 	);
 }
 

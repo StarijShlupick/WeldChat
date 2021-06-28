@@ -9,8 +9,8 @@ const Auth: React.FC = () => {
 	const authMode = useAppSelector((state) => state.AuthReducer)
 	return (
 			<section className="auth">
-				<Container className="d-flex align-items-center justify-content-center h-100" style={{ minHeight: "100vh" }}>
-					<div className="w-100" style={{ maxWidth: "400px" }}>
+				<Container className="d-flex align-items-center justify-content-center h-100" style={{minHeight: "100vh"}}>
+					<div className="w-100" style={{maxWidth: "400px"}}>
 						{authMode === EAuthMode.signup ? (
 								<SignUp/>
 						) : (
